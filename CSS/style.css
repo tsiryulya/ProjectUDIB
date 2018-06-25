@@ -1,0 +1,814 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #1e8bc3;
+}
+
+body {
+    background: linear-gradient(to right, #405b80 0, rgba(44, 59, 65, .6) 100%);
+}
+
+/*UDIB.html*/
+
+.wrapper {
+    background-position: center center;
+    background: url(../images/mainFon.jpg) no-repeat #22313f;
+    /* background-attachment:fixed; */
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 1.75em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 10.5% 2.7fr 1fr;
+    grid-template-columns: 1fr 45%;
+    grid-template-areas: "header header" "main authorization" "footer footer"
+}
+
+@media only screen and (max-width: 767px) {
+    .wrapper {
+        background-image: url(/images/mainFonSm.jpg);
+    }
+}
+
+/*header*/
+
+.header {
+    grid-area: header;
+    opacity: 0.8;
+    background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
+
+}
+
+header {
+    vertical-align: middle;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.icon {
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10.4%;
+    margin: 1% 3% 1%;
+}
+
+/*Main block*/
+
+.main {
+    grid-area: main;
+}
+
+.description {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    font-size: 1.8vw;
+    justify-content: center;
+    margin-top: 17%;
+    color: #eeeeee;
+    text-shadow: 1px 1px 3px #333, -1px -1px 3px #030303, 1px 1px #333, -1px -1px #030303;
+    margin-left: 4%;
+}
+
+.head {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.3vw;
+
+}
+
+.artic {
+    text-align: left;
+    padding: 5%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #eeeeee;
+    text-shadow: 1px 1px 3px #333;
+}
+
+/*Authorization block*/
+
+.authorization {
+    grid-area: authorization;
+
+}
+
+.login-page {
+    width: 60%;
+    padding: 18% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    /*наложение элементов друг на друга в определённом порядке*/
+    background: linear-gradient(to right, #0e2442 0, rgba(44, 49, 65, .9) 100%);
+    max-width: 90%;
+    margin: 0 auto 30%;
+    padding: 15%;
+    text-align: center;
+    box-shadow: 0 0 15% 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 2%;
+}
+
+.form input {
+    font-family: 'Source Sans Pro', sans-serif;
+    outline: 0;
+    /*цвет, стиль и толщина внешней границы на всех четырех сторонах элемента*/
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 8%;
+    padding: 5%;
+    box-sizing: border-box;
+    font-size: 1.1vw;
+    border-radius: 3px;
+}
+
+.form button {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    /*цвет границы объекта прозрачный*/
+    width: 100%;
+    padding: 2%;
+    color: #FFFFFF;
+    font-size: 1.5vw;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    /*переход объекта из одного состояния в другой*/
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: url(/images/btn.png);
+}
+
+/*footer*/
+
+.footer {
+    grid-area: footer;
+    background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
+}
+
+.content {
+    margin: 2% 3% 4%;
+}
+
+.coppy {
+    font-size: 1.2vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #1979be;
+    margin-top: 1%;
+    margin-left: 3%;
+}
+
+.connect {
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 1vw;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    color: #1979be;
+    margin-bottom: 1%;
+    line-height: 2;
+}
+
+.address {
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20.4%;
+    margin-left: 3%;
+    margin-top: 2%;
+
+}
+
+.contacts {
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 14%;
+    margin-right: 21%;
+    margin-top: 2%;
+}
+
+/*Main.html*/
+
+.wrapperMain {
+    background-position: center center;
+    background: url(../images/mainFon.jpg) no-repeat #22313f;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 1.75em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 10.5% 2.7fr 1fr;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "header header" "crossroads map" "footer footer"
+}
+
+@media only screen and (max-width: 767px) {
+    .wrapperMain {
+        background-image: url(/images/mainFonSm.jpg);
+    }
+}
+
+/*User*/
+
+.user {
+    font-size: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #3599e0;
+    margin-left: 60.5%;
+
+}
+
+/*Exit*/
+
+.exit {
+    border: 0.15vw solid #1979be;
+    border-radius: 0.3vw;
+    padding: 1rem 2rem .5rem;
+    padding: 1%;
+    margin-right: 1.5%;
+}
+
+.a-exit {
+    font-size: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #3599e0;
+}
+
+/*crossroads*/
+
+.crossroads {
+    grid-area: crossroads;
+    background: linear-gradient(to right, #0e2442 0, rgba(44, 49, 65, .9) 100%);
+    /* border: 5px inset; границы 
+    border-color: #5e6b7e; */
+    color: #eeeeee;
+    margin: 3% 0 3% 23%;
+}
+
+.listCrossroads {
+    height: auto;
+}
+
+/*search*/
+
+.input-icon-search {
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3%;
+}
+
+.fa-search {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+}
+
+.input-icon {
+    background: #ddd;
+    width: 6%;
+}
+
+.input-with-icon {
+    border: none;
+    width: 100%;
+}
+
+.input-icon,
+.input-with-icon {
+    padding: 3%;
+    font-size: 0.9vw;
+}
+
+/*allcrossroads*/
+
+.allcrossroads {
+    margin-top: 5%;
+    margin-left: 13%;
+    width: 80%;
+    font-size: 0.9vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.a-allcrossroads {
+    color: #eeeeee;
+    text-decoration: underline;
+}
+
+/*districts*/
+
+.districts {
+    font-size: 0.9vw;
+    margin-top: 5%;
+    margin-left: 13%;
+    color: #eeeeee;
+    line-height: 2;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*listCrossroads*/
+
+.listCross {
+    margin-left: 7%;
+}
+
+/*checkbox*/
+
+/* The container */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 13%;
+    margin-bottom: 3%;
+    cursor: pointer;
+    font-size: 0.9vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+    border-radius: 0.2vw;
+    position: absolute;
+    top: 12%;
+    left: 0;
+    height: 70%;
+    width: 11%;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 35%;
+    top: 15%;
+    width: 14%;
+    height: 35%;
+    border: solid white;
+    border-width: 0 0.15vw 0.15vw 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*btnCreate*/
+
+.btn-statistics {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    width: 35%;
+    padding: 2%;
+    color: #FFFFFF;
+    font-size: 0.8vw;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 50%;
+    margin-left: 13%;
+}
+
+/*btnHistory*/
+
+.btn-history {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    width: 35%;
+    padding: 2%;
+    color: #FFFFFF;
+    font-size: 0.8vw;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 7%;
+}
+
+.iconHistory {
+    width: 70%;
+}
+
+/*Modal*/
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 9.1%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+    max-height: 55.3%;
+    background-color: #fefefe;
+    margin-left: 6.4%;
+    padding: 1%;
+    border: 0.2vw solid #888;
+    width: 12.5%;
+    color: dimgrey;
+    font-size: 1vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-y: scroll;
+}
+
+/* The Close Button */
+
+.close {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #aaaaaa;
+    float: right;
+    margin-left: 2%;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.listHistory {
+    padding-top: 10%;
+    line-height: 2;
+}
+
+/*map*/
+
+.map {
+    height: 96.5%;
+    grid-area: map;
+    margin: 0.8% 11% 20% 0;
+}
+
+.map_panel {
+    vertical-align: top;
+}
+
+/*Statistics.html*/
+
+.wrapperStatistics {
+    background-position: center center;
+    background: url(../images/mainFon.jpg) no-repeat #22313f;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 1.75em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 115%;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 11.7% 2.7fr 1fr;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: "header header" "menu groupsCrossroads" "footer footer"
+}
+
+@media only screen and (max-width: 767px) {
+    .wrapperStatistics {
+        background-image: url(/images/mainFonSm.jpg);
+    }
+}
+
+/*Menu*/
+
+.menu {
+    grid-area: menu;
+    margin: 12.3% 0 12% 45%;
+    background: linear-gradient(to right, #0e2442 0, rgba(44, 49, 65, .9) 100%);
+
+}
+
+.btn-add {
+    margin: 30%;
+    height: 3.2%;
+    width: 35%;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.btn-add:hover,
+.btn-add:active,
+.btn-add:focus {
+    background: url(/images/btn.png);
+}
+
+.btn-settings {
+    margin: 0 0 0 30%;
+    height: 3.2%;
+    width: 35%;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.btn-settings:hover,
+.btn-settings:active,
+.btn-settings:focus {
+    background: url(/images/btn.png);
+}
+
+.btn-delete {
+    margin: 0 0 0 30%;
+    height: 3.2%;
+    width: 35%;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.btn-delete:hover,
+.btn-delete:active,
+.btn-delete:focus {
+    background: url(/images/btn.png);
+}
+
+.btn-set {
+    margin: 20% 0 0 30%;
+    height: 3.2%;
+    width: 35%;
+    background: url(/images/btnInactive.png);
+    border-color: transparent;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.btn-set:hover,
+.btn-set:active,
+.btn-set:focus {
+    background: url(/images/btn.png);
+}
+
+.btn-ok {
+    margin: 20% 0 0 30%;
+    height: 3.2%;
+    width: 35%;
+    background: url(/images/btnInactive_ok.png);
+    border-color: transparent;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.btn-ok:hover,
+.btn-ok:active,
+.btn-ok:focus {
+    background: url(/images/btn_ok.png);
+}
+
+
+
+.settings {
+    /* border-radius: 0.11vw;*/
+    display: none;
+    /* border: 0.2vw solid #1979be; /* Параметры границы */
+    /*  padding: 25% 0 25% 0; /* Поля вокруг текста */
+    width: 100%;
+}
+
+/*groupsCrossroads*/
+
+.groupsCrossroads {
+    grid-area: groupsCrossroads;
+    margin: 1.4% 10% 1.4% 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    overflow-y: scroll;
+}
+
+/* Create four equal columns that sits next to each other */
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.cross {
+    background: #1979be;
+    margin: 3%;
+    color: aliceblue;
+    height: 27%;
+}
+
+.cont {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 3%;
+}
+
+.value {
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+}
+/*Scroll*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0e2442; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1979be; 
+}
+
+/*pop-up*/
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;    
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}

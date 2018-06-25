@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>УДИБ</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;" />
+    <meta name="description" content="Сайт о телепортации">
+    <meta name="keywords" content="дороги, Красноярск, состояние движения">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Цирюльникова Анастасия Михайловна">
+    <link href="CSS/style.css" rel="stylesheet" />
+    <script src="https://api-maps.yandex.ru/1.1/?key=ADFEo00BAAAAbXERFAIAhHKCHgsUdb81-yhg1dEZJkBdxDIAAAAAAAAAAAAaqMFjWT86vH3rOKuGSWYiCDJxig==&amp;modules=traffic"></script>
+    <script src="js/traffic_control.js"></script>
+</head>
+
+<body>
+    <div class="wrapperMain">
+        <header class="header grid-area">
+            <img class="icon" src="./images/удиб.png">
+            <div class="user">
+                <p>Анастасия Цирюльникова</p>
+            </div>
+            <div class="exit">
+                <a class="a-exit" href="UDIB.html">Выход</a>
+            </div>
+        </header>
+        <div class="crossroads grid-area">
+            <div class="listCrossroads">
+                <!--search-->
+                <div class="search">
+                    <div class="input-icon-search">
+                        <span class="input-icon"><img class="fa-search" src="images/search.png"></span>
+                        <input type="text" class="input-with-icon" id="form-name" placeholder="Поиск...">
+                    </div>
+                </div>
+                <!--allcrossroads-->
+                <div class="allcrossroads">
+                    <a class="a-allcrossroads" href="#">Показать все перекрёстки</a></p>
+                </div>
+                <!--listCrossroads-->
+                <div class="districts">
+                    <p>• Железнодорожный район</p>
+                    <div class="listCross">
+                        <label class="container">- Перекрёсток 1
+                        <input type="checkbox" checked="checked"><span class="checkmark"></span>
+                        </label >
+                        <label class="container">- Перекрёсток 2
+                        <input type="checkbox"><span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p>• Железнодорожный район</p>
+                    <div class="listCross">
+                        <label class="container">- Перекрёсток 1
+                        <input type="checkbox"><span class="checkmark"></span>
+                        </label>
+                        <label class="container">- Перекрёсток 2
+                        <input type="checkbox"><span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p>• Железнодорожный район</p>
+                    <p>• Кировский район</p>
+                    <p>• Свердловский район</p>
+                </div>
+                <!--buttons-->
+                <div class="btnCteate">
+                    <button class="btn-statistics" id="btn-statistics">Статистика</button>
+                    <button class="btn-history" id="btn-history">История</button>
+                </div>
+                <!-- The Modal history -->
+                <div id="modalHistory" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="listHistory">
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                            <p>- 19.06.2018 18:13</p>
+                            <p>- 19.06.2018 21:03</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map grid-area" id="map">
+            <div class="map_panel">
+                <div id="YMapsID" style="width:100%; height:100%"></div>
+            </div>
+        </div>
+        <footer class="footer grid-area">
+            <div class="content">
+                <div class="coppy">
+                    <p>© 2018 Управление дорог, инфраструктуры и благоустройства (Удиб)</p>
+                </div>
+                <div class="connect">
+                    <div class="address">
+                        <p>ул.Можайского, д.11 Красноярск, Россия 660041</p>
+                        <p></p>
+                    </div>
+                    <div class="contacts">
+                        <p>+7 (391) 265-31-93 iiiiii@mail.ru</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>
