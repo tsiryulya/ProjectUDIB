@@ -25,42 +25,56 @@
 
         </div>
         <div class="row grid-area">
-            <div class="column">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-            </div>
-            <div class="column">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-            </div>
-            <div class="column">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-            </div>
-            <div class="column">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                <img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-            </div>
+ <h5>Demo 2, created from JSON data</h5>
+<div id="demo2_menu">
+    [
+       {
+          "href":"http:\/\/www.easyjstree.com",
+          "hrefTarget":"_blank",
+          "text":"Home"
+       },
+       {
+          "children":[
+             {
+                "href":"http:\/\/www.google.com",
+                "hrefTarget":"_blank",
+                "text":"Go to Google.com"
+             },
+             {
+                "href":"http:\/\/www.yahoo.com",
+                "hrefTarget":"_blank",
+                "text":"Go to Yahoo.com"
+             }
+          ],
+          "isActive":false,
+          "isExpanded":true,
+          "isFolder":true,
+          "text":"Folder 1",
+          "tooltip":"Bookmarks"
+       },
+       {
+          "children":[
+             {
+                "text":"Sub Node 1"
+             },
+             {
+                "text":"Sub Node 2"
+             },
+             {
+                "text":"Sub Node 3"
+             }
+          ],
+          "isActive":false,
+          "text":"Node 1"
+       },
+       {
+          "text":"Node 2"
+       }
+    ]
+</div>
+<script>
+    $('#demo2_menu').easytree();
+</script>
         </div>
         <footer class="footer grid-area">
             <div class="content">

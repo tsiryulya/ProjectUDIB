@@ -564,8 +564,8 @@ header {
 
 }
 
-.btn-add {
-    margin: 30%;
+.btn-newGroup {
+    margin: 7%;
     height: 3.2%;
     width: 35%;
     background: url(/images/btnInactive.png);
@@ -578,14 +578,14 @@ header {
 
 }
 
-.btn-add:hover,
-.btn-add:active,
-.btn-add:focus {
+.btn-newGroup:hover,
+.btn-newGroup:active,
+.btn-newGroup:focus {
     background: url(/images/btn.png);
 }
 
 .btn-settings {
-    margin: 0 0 0 30%;
+    margin: 7%;
     height: 3.2%;
     width: 35%;
     background: url(/images/btnInactive.png);
@@ -625,7 +625,7 @@ header {
 }
 
 .btn-set {
-    margin: 20% 0 0 30%;
+    margin: 7%;
     height: 3.2%;
     width: 35%;
     background: url(/images/btnInactive.png);
@@ -645,7 +645,7 @@ header {
 }
 
 .btn-ok {
-    margin: 20% 0 0 30%;
+    margin: 5%;
     height: 3.2%;
     width: 35%;
     background: url(/images/btnInactive_ok.png);
@@ -667,10 +667,17 @@ header {
 
 
 .settings {
+    text-align: center;
     /* border-radius: 0.11vw;*/
     display: none;
     /* border: 0.2vw solid #1979be; /* Параметры границы */
     /*  padding: 25% 0 25% 0; /* Поля вокруг текста */
+    width: 100%;
+}
+
+.staticBtn {
+    margin-top: 30%;
+    text-align: center;
     width: 100%;
 }
 
@@ -712,7 +719,7 @@ header {
     .column {
         flex: 100%;
         max-width: 100%;
-    }
+    }    
 }
 
 .cross {

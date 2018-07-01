@@ -23,49 +23,97 @@
             </div>
         </header>
         <div class="menu grid-area">
-            <button id="btn-add" class="btn-add"><img src="images/icon_add.png" style="width:70%"></i></button>
-            <button id="btn-settings" class="btn-settings"><img src="images/icon_settings.png" style="width:70%"></i></button>
+            <div class="staticBtn">
+                <div class="popup"><button id="btn-newGroup" onmouseover="overNewGroupFunction()" onmouseout="normalOverNewGroupFunction()" class="btn-newGroup"><img src="images/icon_crossroad.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-newGroup">создать новую группу перекрёстков</span>
+                </div>
+                <div class="popup"><button id="btnSettings" onmouseover="overSettingsFunction()" onmouseout="normalOverSettingsFunction()" class="btn-settings"><img src="images/icon_settings.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-settings">настроить группы перекрёстков</span>
+                </div>
+            </div>
             <div class="settings" id="settings">
-                <div class="popup"><button id="btn-delete" onmouseover="overDeleteFunction()" onmouseout="normalOverDeleteFunction()" class="btn-delete"><img src="images/icon_delete.png" style="width:70%"></i></button>
-                    <span class="popuptext" id="span-delete">удалить</span></div>
-                <button id="btn-move" class="btn-set"><img src="images/icon_move.png" style="width:70%"></i></button>
-                <button id="btn-move" class="btn-set"><img src="images/icon_copy.png" style="width:70%"></i></button>
-                <button id="btn-groups" class="btn-set"><img src="images/icon_groups.png" style="width:70%"></i></button>
-                <button id="btn-ok" class="btn-ok"><img src="images/icon_ok.png" style="width:70%"></i></button>
+                <div class="popup"><button id="btnDelete" onmouseover="overDeleteFunction()" onmouseout="normalOverDeleteFunction()" class="btn-set"><img src="images/icon_delete.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-delete">удалить</span>
+                </div>
+                <div class="popup"><button id="btnMove" onmouseover="overMoveFunction()" onmouseout="normalOverMoveFunction()" class="btn-set"><img src="images/icon_move.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-move">перемстить</span>
+                </div>
+                <div class="popup"><button id="btnCopy" onmouseover="overCopyFunction()" onmouseout="normalOverCopyFunction()" class="btn-set"><img src="images/icon_copy.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-copy">дублировать</span>
+                </div>
+                <div class="popup"><button id="btnGroups" onmouseover="overGroupsFunction()" onmouseout="normalOverGroupsFunction()" class="btn-set"><img src="images/icon_groups.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-groups">объединить в группу</span>
+                </div>
+                <div class="popup"><button id="btnOk" onmouseover="overOkFunction()" onmouseout="normalOverOkFunction()" class="btn-ok"><img src="images/icon_ok.png" style="width:70%"></i></button>
+                    <span class="popuptext" id="span-ok">применить настройку групп</span>
+                </div>
             </div>
         </div>
-        <div class="groupsCrossroads grid-area">
+        <div class="groupsCrossroads grid-area" id="groupsCrossroads">
+            <div class="column">
+                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
+                    <div class="cont">Ленина - Вейнбаума
+                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
+                    <div class="cont">Гусарова - Вейнбаума
+                        <div class="value"> 31 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
+                    <div class="cont">Калинина - Вейнбаума
+                        <div class="value"> 41 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
             <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 51 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div>
+            <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 61 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div>
+            <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 71 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div>
+            <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 81 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div>
+            <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 91 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div> 
+               <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
+                        <div class="value"> 91 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
+            </div>
+            <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
                     <div class="cont">Маркса - Вейнбаума
                         <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
@@ -78,36 +126,6 @@
                         <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
             </div>
             <div class="column">
                 <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
@@ -115,74 +133,9 @@
                         <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                     </div>
                 </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
             </div>
-            <div class="column">
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
-                    <div class="cont">Маркса - Вейнбаума
-                        <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
+
+
         </div>
         <footer class="footer grid-area">
             <div class="content">
