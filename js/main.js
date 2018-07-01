@@ -38,5 +38,4 @@ window.onclick = function (event) {
 
 //listCross//
 
-var listCross = document.getElementById('listCross');
-var 
+

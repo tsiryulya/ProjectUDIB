@@ -2,37 +2,51 @@
 $('#btn-newGroup').click(function () {
     location.replace("Main.html");
 });
-//modal//
 
-// Get the modal
 var settings = document.getElementById('settings');
-
-// Get the button that opens the modal
 var btn = document.getElementById("btnSettings");
 var btnOk = document.getElementById("btnOk");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 var highlightCoross = document.getElementsByClassName("cross");
 
+
 var btnDelete = document.getElementById("btnDelete");
+
+//for (var i = 0; i < highlightCoross.length; i++) {
+//    highlightCoross[i].onclick = function () {
+//        //появляется модальное окно
+ //       modal.style.display = "block";
+ //       var dCross = highlightCoross[i].cloneNode(true);
+ //       document.getElementById("modalContentStatistics").appendChild(dCross);
+//       
+//    };
+//}
 
 btnDelete.onclick = function () {
     for (var i = 0; i < highlightCoross.length; i++) {
         if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
-            if (highlightCoross[i].parentNode) {
-                highlightCoross[i].parentNode.removeChild(highlightCoross[i]);
-            }
+            highlightCoross[i].remove();
+            i--;
         }
     }
 };
 
 var btnCopy = document.getElementById("btnCopy");
+var hCount = highlightCoross.length;
 
 btnCopy.onclick = function () {
-    for (var i = 0; i < highlightCoross.length; i++) {
+    for (var i = 0; i < hCount; i++) {
         if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
-            document.getElementById("groupsCrossroads").appendChild(highlightCoross[i].cloneNode(true));
+            highlightCoross[i].style.border = "";
+            var hCross = highlightCoross[i].cloneNode(true);
+            document.getElementById("groupsCrossroads").appendChild(hCross);
+            highlightCoross[highlightCoross.length - 1].onclick = function () {
+                if (this.style.border === "")
+                    this.style.border = "4px solid #0e2442";
+                else
+                    this.style.border = "";
+            }
+            // $(".groupsCrossroads").append("<div class = 'column'>wetwet</div>");
+
         }
     }
 }
@@ -44,18 +58,21 @@ btn.onclick = function () {
     //сделать возможным выделения определённого дива при нажатии 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].onclick = function () {
-            this.style.border = "4px solid #0e2442";
-        };
-    }
-};
+            if (this.style.border === "")
+                this.style.border = "4px solid #0e2442";
+            else
+                this.style.border = "";
+        }
+    };
+}
 
 btnOk.onclick = function () {
-    settings.style.display = "none";
+    settings.style.display = "";
     btn.style.display = "block";
     btn.style.marginLeft = "31%";
     //убрать выделения 
     for (var i = 0; i < highlightCoross.length; i++) {
-        highlightCoross[i].style.border = "none";
+        highlightCoross[i].style.border = "";
     };
 };
 
