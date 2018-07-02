@@ -561,13 +561,12 @@ header {
     grid-area: menu;
     margin: 12.3% 0 12% 45%;
     background: linear-gradient(to right, #0e2442 0, rgba(44, 49, 65, .9) 100%);
-
 }
 
 .btn-newGroup {
     margin: 7%;
-    height: 3.2%;
-    width: 35%;
+    width: 38%;
+    padding: 2%;
     background: url(/images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
@@ -586,8 +585,8 @@ header {
 
 .btn-settings {
     margin: 7%;
-    height: 3.2%;
-    width: 35%;
+    padding: 2%;
+    width: 38%;
     background: url(/images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
@@ -606,8 +605,8 @@ header {
 
 .btn-delete {
     margin: 0 0 0 30%;
-    height: 3.2%;
-    width: 35%;
+    width: 38%;
+    padding: 2%;
     background: url(/images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
@@ -626,8 +625,8 @@ header {
 
 .btn-set {
     margin: 7%;
-    height: 3.2%;
-    width: 35%;
+    padding: 2%;
+    width: 38%;
     background: url(/images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
@@ -646,8 +645,8 @@ header {
 
 .btn-ok {
     margin: 5%;
-    height: 3.2%;
-    width: 35%;
+    padding: 2%;
+    width: 38%;
     background: url(/images/btnInactive_ok.png);
     border-color: transparent;
     color: #FFFFFF;
@@ -707,23 +706,6 @@ header {
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 
-@media only screen and (max-width: 800px) {
-    .cross {
-        flex: 89%;
-        max-width: 89%;
-        background: #000000;
-    }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
-@media (max-width: 600px) {
-    .cross {
-        flex: 99%;
-        max-width: 99%;
-    }
-}
-
 .cross {
     /* flex: 24%; */
     max-width: 24%;
@@ -734,10 +716,28 @@ header {
 
 }
 
-.new {
+@media only screen and (max-width: 1312px) {
+    .cross {
+        max-width: 32%;
+    }
+     
+}
 
-    min-height: 25%;
-    margin-top: 1%;   
+@media only screen and (max-width: 1003px) {
+    .cross {
+        max-width: 48%;
+    }
+     
+}
+
+@media only screen and (max-width: 694px) {
+    .cross {
+        max-width: 99%;
+    }
+}
+
+.new {
+    margin-top: 1%;
 }
 
 .nameGroup {
@@ -748,10 +748,12 @@ header {
 .newCross {
     display: flex;
     flex-direction: row;
-     overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 #groupTitle {
+    border-radius: 0 0 0.5vw 0;
+    border: none;
     background: #0e2442;
     margin-top: -3px;
     margin-left: 0;
@@ -824,12 +826,12 @@ header {
 
 .popup .popuptext {
     visibility: hidden;
-    width: 160px;
+    width: 25vh;
     background-color: #555;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
+    border-radius: 0.2vw;
+    padding: 0.2vw 0;
     position: absolute;
     z-index: 1;
     bottom: 125%;

@@ -72,26 +72,27 @@ btnCopy.onclick = function () {
 var btnGroups = document.getElementById("btnGroups");
 
 btnGroups.onclick = function () {
-/*    var hNew = document.getElementsByClassName("new");
-    var countNew = 0;
-    for (var i = 0; i < hNew.length; i++) {
-        if (hNew[i].style.border === "4px solid rgb(14, 36, 66)") {
-            btnGroups.disabled = true;
-            countNew++;
-            return;
+    /*    var hNew = document.getElementsByClassName("new");
+        var countNew = 0;
+        for (var i = 0; i < hNew.length; i++) {
+            if (hNew[i].style.border === "4px solid rgb(14, 36, 66)") {
+                btnGroups.disabled = true;
+                countNew++;
+                return;
+            }
         }
-    }
-    if (countNew === 0) {
-        btnGroups.disabled = false;
-    }*/
+        if (countNew === 0) {
+            btnGroups.disabled = false;
+        }*/
     for (var i = 0; i < highlightCoross.length; i++) {
-        var parentCross = $(highlightCoross[i]).parent().prop();
-        var p = parentCross.prevObject;
-        if (parentCross.prevObject === "div.newCross") {
-        btnGroups.disable = true;
-        }
+        var parentCross = $(highlightCoross[i]).parent().attr("class");
+        if (parentCross === "newCross" && highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)" ) {
+            btnGroups.disable = true;
+            return;
+        } else
+            btnGroups.disable = false;
     }
-    
+
     var hCross = [];
     for (var i = 0; i < highlightCoross.length; i++) {
         if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
@@ -103,7 +104,7 @@ btnGroups.onclick = function () {
     }
 
     $(hCross).wrapAll("<div class='new' />");
-    $(".new:last").prepend('<div class = "nameGroup"><p id = "groupTitle">NameGroup</p></div>');
+    $(".new:last").prepend('<div class = "nameGroup"><input type="text" placeholder="NameGroup" id = "groupTitle"/></div>');
     var lastItem = document.getElementsByClassName("new").length - 1;
     document.getElementsByClassName("new")[lastItem].style.border = "4px solid rgb(14, 36, 66)";
     $(hCross).wrapAll("<div class='newCross' />");
