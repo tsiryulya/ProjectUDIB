@@ -690,7 +690,7 @@ header {
     flex-wrap: wrap;
     padding: 0 4px;
     overflow-y: scroll;
-    
+
 }
 
 /* Create four equal columns that sits next to each other 
@@ -721,16 +721,46 @@ header {
     .cross {
         flex: 99%;
         max-width: 99%;
-    }    
+    }
 }
 
 .cross {
-    flex: 24%;
+    /* flex: 24%; */
     max-width: 24%;
+    min-width: 24%;
     margin: 5px;
     background: #1979be;
     color: aliceblue;
-    
+
+}
+
+.new {
+
+    min-height: 25%;
+    margin-top: 1%;   
+}
+
+.nameGroup {
+    display: flex;
+    height: 3%;
+}
+
+.newCross {
+    display: flex;
+    flex-direction: row;
+     overflow-y: scroll;
+}
+
+#groupTitle {
+    background: #0e2442;
+    margin-top: -3px;
+    margin-left: 0;
+    width: auto;
+    height: 100%;
+    color: #1979be;
+    padding: 0.3vw;
+    font-size: 0.9vw;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .cont {
@@ -744,33 +774,45 @@ header {
     font-family: 'Open Sans', sans-serif;
     text-align: right;
 }
+
 /*Scroll*/
 
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
+
 /* Track */
+
 ::-webkit-scrollbar-track {
-    background: none; 
+    background: none;
 }
- 
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-    background: #0e2442; 
+    background: #0e2442;
 }
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #1979be; 
+    background: #1979be;
 }
 
 /*pop-up*/
 
 /* Popup container - can be anything you want */
+
 .popup {
-    position: relative;    
+    position: relative;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -779,6 +821,7 @@ header {
 }
 
 /* The actual popup */
+
 .popup .popuptext {
     visibility: hidden;
     width: 160px;
@@ -795,6 +838,7 @@ header {
 }
 
 /* Popup arrow */
+
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -807,6 +851,7 @@ header {
 }
 
 /* Toggle this class - hide and show the popup */
+
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
@@ -814,34 +859,54 @@ header {
 }
 
 /* Add animation (fade in the popup) */
+
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /*ModalStatistocs*/
 
 /* The Modal (background) */
+
 .modalStatistics {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/ opacity */
 }
 
 /* Modal Content */
+
 .modal-contentStatistics {
     background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
     margin: auto;
@@ -852,6 +917,7 @@ header {
 }
 
 /* The Close Button */
+
 .close {
     color: #aaaaaa;
     float: right;

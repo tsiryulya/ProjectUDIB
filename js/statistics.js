@@ -9,18 +9,36 @@ var btnOk = document.getElementById("btnOk");
 var highlightCoross = document.getElementsByClassName("cross");
 
 
+
+var modal = document.getElementById('modalStatistics');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+for (var i = 0; i < highlightCoross.length; i++) {
+    highlightCoross[i].onclick = function () {
+        var dCross = this.cloneNode(true);
+        //появляется модальное окно
+        modal.style.display = "block";
+        $(".modal-contentStatistics").append(dCross);
+        dCross.id = "modalCross";
+    };
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+    $("#modalCross").remove();
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        $("#modalCross").remove();
+    }
+}
+
 var btnDelete = document.getElementById("btnDelete");
-
-//for (var i = 0; i < highlightCoross.length; i++) {
-//    highlightCoross[i].onclick = function () {
-//        //появляется модальное окно
- //       modal.style.display = "block";
- //       var dCross = highlightCoross[i].cloneNode(true);
- //       document.getElementById("modalContentStatistics").appendChild(dCross);
-//       
-//    };
-//}
-
 btnDelete.onclick = function () {
     for (var i = 0; i < highlightCoross.length; i++) {
         if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
@@ -31,10 +49,10 @@ btnDelete.onclick = function () {
 };
 
 var btnCopy = document.getElementById("btnCopy");
-var hCount = highlightCoross.length;
+//var hCount = highlightCoross.length;
 
 btnCopy.onclick = function () {
-    for (var i = 0; i < hCount; i++) {
+    for (var i = 0; i < highlightCoross.length; i++) {
         if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
             highlightCoross[i].style.border = "";
             var hCross = highlightCoross[i].cloneNode(true);
@@ -51,10 +69,56 @@ btnCopy.onclick = function () {
     }
 }
 
+var btnGroups = document.getElementById("btnGroups");
+
+btnGroups.onclick = function () {
+/*    var hNew = document.getElementsByClassName("new");
+    var countNew = 0;
+    for (var i = 0; i < hNew.length; i++) {
+        if (hNew[i].style.border === "4px solid rgb(14, 36, 66)") {
+            btnGroups.disabled = true;
+            countNew++;
+            return;
+        }
+    }
+    if (countNew === 0) {
+        btnGroups.disabled = false;
+    }*/
+    for (var i = 0; i < highlightCoross.length; i++) {
+        var parentCross = $(highlightCoross[i]).parent().prop();
+        var p = parentCross.prevObject;
+        if (parentCross.prevObject === "div.newCross") {
+        btnGroups.disable = true;
+        }
+    }
+    
+    var hCross = [];
+    for (var i = 0; i < highlightCoross.length; i++) {
+        if (highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
+            highlightCoross[i].style.border = "";
+
+            hCross.push(highlightCoross[i]);
+
+        }
+    }
+
+    $(hCross).wrapAll("<div class='new' />");
+    $(".new:last").prepend('<div class = "nameGroup"><p id = "groupTitle">NameGroup</p></div>');
+    var lastItem = document.getElementsByClassName("new").length - 1;
+    document.getElementsByClassName("new")[lastItem].style.border = "4px solid rgb(14, 36, 66)";
+    $(hCross).wrapAll("<div class='newCross' />");
+
+    // var newList = document.getElementsByClassName("new");
+    // newList[0].style.background = "rgb(14, 36, 66)";
+    // newList[1].style.background = "rgb(14, 36, 66)";
+    // $(hCross).wrapAll('<div class="group">');
+};
+
 // When the user clicks the button, open the settings
 btn.onclick = function () {
     settings.style.display = "block";
     btn.style.display = "none";
+    modal.style.display = "none";
     //сделать возможным выделения определённого дива при нажатии 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].onclick = function () {
@@ -70,10 +134,20 @@ btnOk.onclick = function () {
     settings.style.display = "";
     btn.style.display = "block";
     btn.style.marginLeft = "31%";
-    //убрать выделения 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].style.border = "";
-    };
+        highlightCoross[i].onclick = function () {
+            var dCross = this.cloneNode(true);
+            //появляется модальное окно
+            modal.style.display = "block";
+            $(".modal-contentStatistics").append(dCross);
+            dCross.id = "modalCross";
+        };
+    }
+    /*//убрать выделения 
+    for (var i = 0; i < highlightCoross.length; i++) {
+        highlightCoross[i].style.border = "";
+    };*/
 };
 
 /*pop-up*/
