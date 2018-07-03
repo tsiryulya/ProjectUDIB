@@ -288,12 +288,12 @@ header {
 .fa-search {
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100%;
+    width: 80%;
 }
 
 .input-icon {
     background: #ddd;
-    width: 6%;
+    width: 13%;
 }
 
 .input-with-icon {
@@ -303,7 +303,7 @@ header {
 
 .input-icon,
 .input-with-icon {
-    padding: 3%;
+    padding: 2%;
     font-size: 0.9vw;
 }
 
