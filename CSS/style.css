@@ -720,14 +720,14 @@ header {
     .cross {
         max-width: 32%;
     }
-     
+
 }
 
 @media only screen and (max-width: 1003px) {
     .cross {
         max-width: 48%;
     }
-     
+
 }
 
 @media only screen and (max-width: 694px) {
@@ -766,13 +766,13 @@ header {
 }
 
 .cont {
-    font-size: 14px;
+    font-size: 1.1vw;
     font-family: 'Open Sans', sans-serif;
     margin: 3%;
 }
 
 .value {
-    font-size: 11px;
+    font-size: 1.1vw;
     font-family: 'Open Sans', sans-serif;
     text-align: right;
 }
@@ -903,7 +903,7 @@ header {
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
     /* Black w/ opacity */
 }
 
@@ -912,10 +912,21 @@ header {
 .modal-contentStatistics {
     background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
     margin: auto;
-    padding: 20px;
+    padding-top: 1%;
+    padding-right: 2%;
     border: 1px solid #888;
-    width: 90%;
-    height: 90%;
+    width: 78%;
+    height: 80%;
+}
+
+.contentModal > .cross {
+    margin-left: 10%;
+    margin-top: 0;
+}
+
+.contentModal > .cross > .cont {
+    margin-top: 1%;
+    line-height: 2;
 }
 
 /* The Close Button */
@@ -923,7 +934,7 @@ header {
 .close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 1.7vw;
     font-weight: bold;
 }
 
@@ -932,4 +943,189 @@ header {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*Graphic*/
+
+.chartContainer {
+    width: 40.5%;
+    height: 79.5%;
+    flex-direction: row;
+    position: none !important;
+
+}
+
+.chartContent {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 99%;
+    background: #1979be;
+    font-family: 'Open Sans', sans-serif;
+    color: #eeeeee;
+}
+
+.period {
+    font-size: 1.2vw;
+    background: #176691;
+    padding: 7% 5% 5%;
+    text-align: center;
+    height: 20%;
+}
+
+.chartDesc {
+    padding: 7%;
+    font-size: 0.9vw;
+    line-height: 1.5;
+}
+
+.contentModal {
+    display: flex;
+    margin: 5% 7% 7%;
+    width: auto;
+    height: 53.9%;
+    padding: 1%;
+}
+
+.chartMenu {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2vw;
+    width: 50%;
+    margin: 3% 7.5% 0;
+}
+
+.chartPeriod {
+    margin-left: 5%;
+}
+
+/*Modal*/
+
+/* The Modal (background) */
+
+.modalType {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 9.1%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-contentType {
+    max-height: 55.3%;
+    background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
+    margin: 4.4% 16.5% 0;
+    border: 0.1vw solid #888;
+    width: 7.5%;
+    color: #eeeeee;
+    font-size: 1vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-y: scroll;
+}
+
+/* The Close Button */
+
+.closeType {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.closeType:hover,
+.closeType:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;    
+}
+
+.listType {
+    margin: 13%;
+    font-family: 'Open Sans', sans-serif;
+    color: #eeeeee;
+    font-size: 0.9vw;
+}
+
+/*Modal*/
+
+/* The Modal (background) */
+
+.modalPeriod {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 9.1%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-contentPeriod {
+    max-height: 55.3%;
+    background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
+    margin: 4.4% 25% 0;
+    border: 0.1vw solid #888;
+    width: 7.5%;
+    color: #eeeeee;
+    font-size: 1vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-y: scroll;
+}
+
+/* The Close Button */
+
+.closePeriod {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.closePeriod:hover,
+.closePeriod:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;    
+}
+
+.listPeriod {
+    margin: 13%;
+    font-family: 'Open Sans', sans-serif;
+    color: #eeeeee;
+    font-size: 0.9vw;
 }

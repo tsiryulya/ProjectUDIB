@@ -129,12 +129,43 @@
         </div>
         <!-- The Modal -->
         <div id="modalStatistics" class="modalStatistics">
-
             <!-- Modal content -->
             <div class="modal-contentStatistics">
                 <span class="close">&times;</span>
+                <div class="chartMenu"><a class="chartType" id="chartType">Тип графика</a><a class="chartPeriod" id="chartPeriod" >Диапазон</a></div>
+                <div class="contentModal">
+                    <div class="chartContent">
+                        <div class="period">Июнь 2018</div>
+                        <div class="chartDesc">Описание графка Описание графка Описание графка Описание графка Описание графка Описание графка</div>
+                    </div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <div class="chartContainer" id="chart_div"></div>
+                </div>
             </div>
-
+            <!-- The Modal history -->
+            <div id="modalType" class="modalType">
+                <!-- Modal content -->
+                <div class="modal-contentType">
+                    <span class="closeType">&times;</span>
+                    <div class="listType">
+                        <p>- Тип 1</p>
+                        <p>- Тип 2</p>
+                        <p>- Тип 3</p>
+                    </div>
+                </div>
+            </div>
+            <!-- The Modal history -->
+            <div id="modalPeriod" class="modalPeriod">
+                <!-- Modal content -->
+                <div class="modal-contentPeriod">
+                    <span class="closePeriod">&times;</span>
+                    <div class="listPeriod">
+                        <p>- Тип 1</p>
+                        <p>- Тип 2</p>
+                        <p>- Тип 3</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="footer grid-area">
             <div class="content">
@@ -156,7 +187,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/statistics.js"></script>
+<script src="/js/canvasjs.min.js"></script>
 
 </html>
-
-

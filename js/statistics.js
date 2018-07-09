@@ -19,7 +19,7 @@ for (var i = 0; i < highlightCoross.length; i++) {
         var dCross = this.cloneNode(true);
         //появляется модальное окно
         modal.style.display = "block";
-        $(".modal-contentStatistics").append(dCross);
+        $(".contentModal").append(dCross);
         dCross.id = "modalCross";
     };
 }
@@ -31,12 +31,13 @@ span.onclick = function () {
 }
 
 // When the user clicks anywhere outside of the modal, close it
+/*
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
         $("#modalCross").remove();
     }
-}
+}*/
 
 var btnDelete = document.getElementById("btnDelete");
 btnDelete.onclick = function () {
@@ -141,7 +142,7 @@ btnOk.onclick = function () {
             var dCross = this.cloneNode(true);
             //появляется модальное окно
             modal.style.display = "block";
-            $(".modal-contentStatistics").append(dCross);
+            $(".contentModal").append(dCross);
             dCross.id = "modalCross";
         };
     }
@@ -222,3 +223,184 @@ function normalOverOkFunction() {
     var popup = document.getElementById("span-ok");
     popup.classList.toggle("show");
 }
+
+//graphic
+
+window.onload = function () {
+
+var dataPoints = [];
+var y = 1000;
+var limit = 50000;
+
+for ( var i = 0; i < limit; i++ ) {
+	y += Math.round( 10 + Math.random() * (-10 -10));	
+	dataPoints.push({ y: y });
+}
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	zoomEnabled: true,
+	//title:{
+	//	text: "Performance Demo with 50,000 Data Points"
+	//}, 
+	//subtitles:[{
+	//	text: "Try Zooming and Panning"
+	//}],
+	data: [{
+		type: "line",
+		dataPoints: dataPoints
+	}],
+	axisY:{
+		includeZero: false
+	}
+});
+chart.render();
+
+}
+
+ google.charts.load('current', {
+        packages: ['corechart', 'line']
+    });
+    google.charts.setOnLoadCallback(drawCurveTypes);
+
+    function drawCurveTypes() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Dogs');
+        data.addColumn('number', 'Cats');
+        data.addColumn('number', 'Lynx');
+
+        data.addRows([
+            [0, 0, 0, 0],
+            [1, 10, 5, 2],
+            [2, 23, 15, 6],
+            [3, 17, 9, 13],
+            [4, 18, 10, 15],
+            [5, 9, 5, 5],
+            [6, 11, 3, 2],
+            [7, 27, 19, 1],
+            [8, 33, 25, 25],
+            [9, 40, 32, 26],
+            [10, 32, 24, 27],
+            [11, 35, 27,28],
+            [12, 30, 22, 29],
+            [13, 40, 32, 30],
+            [14, 42, 34, 32],
+            [15, 47, 39, 36],
+            [16, 44, 36, 38],
+            [17, 48, 40, 41],
+            [18, 52, 44, 48],
+            [19, 54, 46, 50],
+            [20, 42, 34, 60],
+            [21, 55, 47, 63],
+            [22, 56, 48, 69],
+            [23, 57, 49, 80],
+            [24, 60, 52, 100],
+            [25, 50, 42, 90],
+            [26, 52, 44, 80],
+            [27, 51, 43, 70],
+            [28, 49, 41, 65],
+            [29, 53, 45, 50],
+            [30, 55, 47, 45],
+            [31, 60, 52, 40],
+            [32, 61, 53, 39],
+            [33, 59, 51, 50],
+            [34, 62, 54, 37],
+            [35, 65, 57, 36],
+            [36, 62, 54, 35],
+            [37, 58, 50, 32],
+            [38, 55, 47, 30],
+            [39, 61, 53, 29],
+            [40, 64, 56, 28],
+            [41, 65, 57, 25],
+            [42, 63, 55, 23],
+            [43, 66, 58, 20],
+            [44, 67, 59, 19],
+            [45, 69, 61, 18],
+            [46, 69, 61, 17],
+            [47, 70, 62, 16],
+            [48, 72, 64, 15],
+            [49, 68, 60, 14],
+            [50, 66, 58, 13],
+            [51, 65, 57, 12],
+            [52, 67, 59, 11],
+            [53, 70, 62, 10],
+            [54, 71, 63, 9],
+            [55, 72, 64, 8],
+            [56, 73, 65, 7],
+            [57, 75, 67, 6],
+            [58, 70, 62, 5],
+            [59, 68, 60, 4],
+            [60, 64, 56, 3],
+            [61, 60, 52, 2],
+            [62, 65, 57, 1],
+            [63, 67, 59, 10],
+            [64, 68, 60, 12],
+            [65, 69, 61, 14],
+            [66, 70, 62, 18],
+            [67, 72, 64, 20],
+            [68, 75, 67, 27],
+            [69, 80, 72, 30]
+        ]);
+
+        var options = {
+            hAxis: {
+                title: 'Time'
+            },
+            vAxis: {
+                title: 'Popularity'
+            },
+            series: {
+                1: {
+                    curveType: 'function'
+                }
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+
+//ModalType
+
+// Get the modal
+var modalType = document.getElementById('modalType');
+
+// Get the button that opens the modal
+var chartType = document.getElementById("chartType");
+
+// Get the <span> element that closes the modal
+var spanType = document.getElementsByClassName("closeType")[0];
+
+// When the user clicks the button, open the modal 
+chartType.onclick = function () {
+    modalType.style.display = 'block';
+}
+
+// When the user clicks on <span> (x), close the modal
+spanType.onclick = function () {
+    modalType.style.display = 'none';
+}
+
+
+//ModalPeriod
+
+// Get the modal
+var modalPeriod = document.getElementById('modalPeriod');
+
+// Get the button that opens the modal
+var chartPeriod = document.getElementById("chartPeriod");
+
+// Get the <span> element that closes the modal
+var spanPeriod = document.getElementsByClassName("closePeriod")[0];
+
+// When the user clicks the button, open the modal 
+chartPeriod.onclick = function () {
+    modalPeriod.style.display = 'block';
+}
+
+// When the user clicks on <span> (x), close the modal
+spanPeriod.onclick = function () {
+    modalPeriod.style.display = 'none';
+}
+
