@@ -2,13 +2,91 @@
 
 <head>
     <title>УДИБ</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="CSS/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8;" />
     <meta name="description" content="Сайт о телепортации">
     <meta name="keywords" content="дороги, Красноярск, состояние движения">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Цирюльникова Анастасия Михайловна">
-    <link href="CSS/style.css" rel="stylesheet" />
-    <script src="https://api-maps.yandex.ru/1.1/?key=ADFEo00BAAAAbXERFAIAhHKCHgsUdb81-yhg1dEZJkBdxDIAAAAAAAAAAAAaqMFjWT86vH3rOKuGSWYiCDJxig==&amp;modules=traffic"></script>
+
+    <script>
+        $(function() {
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                .on("change", function() {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                .on("change", function() {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+
+        /* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */
+        /* Written by Andrew Stromnov (stromnov@gmail.com). */
+        (function(factory) {
+            if (typeof define === "function" && define.amd) {
+
+                // AMD. Register as an anonymous module.
+                define(["../widgets/datepicker"], factory);
+            } else {
+
+                // Browser globals
+                factory(jQuery.datepicker);
+            }
+        }(function(datepicker) {
+
+            datepicker.regional.ru = {
+                closeText: "Закрыть",
+                prevText: "&#x3C;Пред",
+                nextText: "След&#x3E;",
+                currentText: "Сегодня",
+                monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+                ],
+                monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+                    "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"
+                ],
+                dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+                dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+                dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                weekHeader: "Нед",
+                dateFormat: "dd.mm.yy",
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ""
+            };
+            datepicker.setDefaults(datepicker.regional.ru);
+
+            return datepicker.regional.ru;
+
+        }));
+
+    </script>
 </head>
 
 <body>
@@ -51,14 +129,14 @@
         </div>
         <div class="groupsCrossroads grid-area" id="groupsCrossroads">
 
-            <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
+            <div class="cross"><img src="/images/photo_2018-07-05_00-29-24.jpg" style="width:100%">
                 <div class="cont">Ленина - Вейнбаума
                     <div class="value"> 21 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                 </div>
             </div>
 
 
-            <div class="cross"><img src="http://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" style="width:100%">
+            <div class="cross"><img src="/images/photo_2018-07-05_00-29-24.jpg" style="width:100%">
                 <div class="cont">Гусарова - Вейнбаума
                     <div class="value"> 31 <img src="/images/icon_current.png" alt=""> 21 <img src="/images/icon_trend.png" alt=""></div>
                 </div>
@@ -132,7 +210,7 @@
             <!-- Modal content -->
             <div class="modal-contentStatistics">
                 <span class="close">&times;</span>
-                <div class="chartMenu"><a class="chartType" id="chartType">Тип графика</a><a class="chartPeriod" id="chartPeriod" >Диапазон</a></div>
+                <div class="chartMenu"><a class="chartType" id="chartType">Тип графика</a><a class="chartPeriod" id="chartPeriod">Диапазон</a></div>
                 <div class="contentModal">
                     <div class="chartContent">
                         <div class="period">Июнь 2018</div>
@@ -160,9 +238,10 @@
                 <div class="modal-contentPeriod">
                     <span class="closePeriod">&times;</span>
                     <div class="listPeriod">
-                        <p>- Тип 1</p>
-                        <p>- Тип 2</p>
-                        <p>- Тип 3</p>
+                        <label for="from">С</label>
+                        <input type="text" id="from" name="from">
+                        <label for="to">По</label>
+                        <input type="text" id="to" name="to">
                     </div>
                 </div>
             </div>
@@ -185,8 +264,7 @@
         </footer>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <script src="js/statistics.js"></script>
-<script src="/js/canvasjs.min.js"></script>
 
 </html>

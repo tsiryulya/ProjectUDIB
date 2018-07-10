@@ -226,38 +226,6 @@ function normalOverOkFunction() {
 
 //graphic
 
-window.onload = function () {
-
-var dataPoints = [];
-var y = 1000;
-var limit = 50000;
-
-for ( var i = 0; i < limit; i++ ) {
-	y += Math.round( 10 + Math.random() * (-10 -10));	
-	dataPoints.push({ y: y });
-}
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	zoomEnabled: true,
-	//title:{
-	//	text: "Performance Demo with 50,000 Data Points"
-	//}, 
-	//subtitles:[{
-	//	text: "Try Zooming and Panning"
-	//}],
-	data: [{
-		type: "line",
-		dataPoints: dataPoints
-	}],
-	axisY:{
-		includeZero: false
-	}
-});
-chart.render();
-
-}
-
  google.charts.load('current', {
         packages: ['corechart', 'line']
     });
@@ -403,4 +371,6 @@ chartPeriod.onclick = function () {
 spanPeriod.onclick = function () {
     modalPeriod.style.display = 'none';
 }
+
+
 

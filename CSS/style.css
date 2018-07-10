@@ -1098,7 +1098,7 @@ header {
     background: linear-gradient(to right, #0a1627 0, rgba(44, 49, 65, .9) 100%);
     margin: 4.4% 25% 0;
     border: 0.1vw solid #888;
-    width: 7.5%;
+    width: 17.5%;
     color: #eeeeee;
     font-size: 1vw;
     font-family: 'Source Sans Pro', sans-serif;
@@ -1128,4 +1128,19 @@ header {
     font-family: 'Open Sans', sans-serif;
     color: #eeeeee;
     font-size: 0.9vw;
+    line-height: 2;
 }
+
+.ui-widget-header {
+    border: 1px solid #176691;
+    background: #176691;
+    color: #eeeeee;
+    font-weight:normal;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #176691;
+    background: #176691;
+    color: #eeeeee;
+}
+
