@@ -2,12 +2,20 @@
 $('#btn-newGroup').click(function () {
     location.replace("Main.html");
 });
-
+ 
 var settings = document.getElementById('settings');
 var btn = document.getElementById("btnSettings");
 var btnOk = document.getElementById("btnOk");
 var highlightCoross = document.getElementsByClassName("cross");
 
+if (localStorage.getItem("groupsCrossroads") != "null") {
+ $(".cross").remove();
+   var divGroups = document.getElementById("groupsCrossroads");
+    var divGroupsNew = JSON.parse(localStorage.getItem("groupsCrossroads"));
+    $(".groupsCrossroads").append(divGroupsNew);
+//   divGroups.push(divGroupsNew);
+   localStorage.setItem("groupsCrossroads", null);
+} 
 
 
 var modal = document.getElementById('modalStatistics');
@@ -87,7 +95,7 @@ btnGroups.onclick = function () {
         }*/
     for (var i = 0; i < highlightCoross.length; i++) {
         var parentCross = $(highlightCoross[i]).parent().attr("class");
-        if (parentCross === "newCross" && highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)" ) {
+        if (parentCross === "newCross" && highlightCoross[i].style.border === "4px solid rgb(14, 36, 66)") {
             btnGroups.disable = true;
             return;
         } else
@@ -104,7 +112,7 @@ btnGroups.onclick = function () {
         }
     }
 
-    $(hCross).wrapAll("<div class='new' />");
+    $(hCross).wrapAll("<div  class='new' id = 'new' />");
     $(".new:last").prepend('<div class = "nameGroup"><input type="text" placeholder="NameGroup" id = "groupTitle"/></div>');
     var lastItem = document.getElementsByClassName("new").length - 1;
     document.getElementsByClassName("new")[lastItem].style.border = "4px solid rgb(14, 36, 66)";
@@ -146,6 +154,21 @@ btnOk.onclick = function () {
             dCross.id = "modalCross";
         };
     }
+    var date = new Date();
+    var options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+    var dateCreate = date.toLocaleString("ru", options);
+    var groups = document.getElementById("groupsCrossroads").outerHTML;
+    localStorage.setItem("dateCreate", dateCreate.toString());
+    localStorage.setItem("groupsCrossroads", JSON.stringify(groups));
     /*//убрать выделения 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].style.border = "";
@@ -226,19 +249,19 @@ function normalOverOkFunction() {
 
 //graphic
 
- google.charts.load('current', {
-        packages: ['corechart', 'line']
-    });
-    google.charts.setOnLoadCallback(drawCurveTypes);
+google.charts.load('current', {
+    packages: ['corechart', 'line']
+});
+google.charts.setOnLoadCallback(drawCurveTypes);
 
-    function drawCurveTypes() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'X');
-        data.addColumn('number', 'Dogs');
-        data.addColumn('number', 'Cats');
-        data.addColumn('number', 'Lynx');
+function drawCurveTypes() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Dogs');
+    data.addColumn('number', 'Cats');
+    data.addColumn('number', 'Lynx');
 
-        data.addRows([
+    data.addRows([
             [0, 0, 0, 0],
             [1, 10, 5, 2],
             [2, 23, 15, 6],
@@ -250,7 +273,7 @@ function normalOverOkFunction() {
             [8, 33, 25, 25],
             [9, 40, 32, 26],
             [10, 32, 24, 27],
-            [11, 35, 27,28],
+            [11, 35, 27, 28],
             [12, 30, 22, 29],
             [13, 40, 32, 30],
             [14, 42, 34, 32],
@@ -311,23 +334,27 @@ function normalOverOkFunction() {
             [69, 80, 72, 30]
         ]);
 
-        var options = {
-            hAxis: {
-                title: 'Time'
-            },
-            vAxis: {
-                title: 'Popularity'
-            },
-            series: {
-                1: {
-                    curveType: 'function'
-                }
+    var options = {
+        hAxis: {
+            title: 'Time'
+        },
+        vAxis: {
+            title: 'Popularity'
+        },
+        series: {
+            1: {
+                curveType: 'function'
             }
-        };
+        },
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
+        'width': 400,
+        'height': 241
+
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
 
 //ModalType
 
@@ -371,6 +398,3 @@ chartPeriod.onclick = function () {
 spanPeriod.onclick = function () {
     modalPeriod.style.display = 'none';
 }
-
-
-

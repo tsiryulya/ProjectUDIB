@@ -1,92 +1,52 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
 
-<head>
-    <link href="CSS/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            var dateFormat = "mm/dd/yy",
-                from = $("#from")
-                .datepicker({
-                    defaultDate: "+1w",
-                    changeMonth: true,
-                    numberOfMonths: 2
-                })
-                .on("change", function() {
-                    to.datepicker("option", "minDate", getDate(this));
-                }),
-                to = $("#to").datepicker({
-                    defaultDate: "+1w",
-                    changeMonth: true,
-                    numberOfMonths: 2
-                })
-                .on("change", function() {
-                    from.datepicker("option", "maxDate", getDate(this));
-                });
+    <title>Web Storage API example</title>
 
-            function getDate(element) {
-                var date;
-                try {
-                    date = $.datepicker.parseDate(dateFormat, element.value);
-                } catch (error) {
-                    date = null;
-                }
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Bitter|Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
-                return date;
-            }
-        });
+  <body>
+  <div class="wrapper">
+    <h1>Web storage</h1>
 
-        /* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */
-        /* Written by Andrew Stromnov (stromnov@gmail.com). */
-        (function(factory) {
-            if (typeof define === "function" && define.amd) {
+    <p>This example is designed to demonstrate usage of the <a href="http://dev.w3.org/html5/webstorage/">W3C Web Storage API</a>. It should work as far back as IE8. Choose custom background colours, logos and fonts from the below drop down menus, then try closing and reopening the page — you will find that your choices are remembered, as they are stored using Web Storage. You can also visit the <a href="event.html" target="_blank">storage event output</a> (opens in new tab). Open this, change some values in the index page, then look at the events page — you'll see the storage changes reported.</p>
 
-                // AMD. Register as an anonymous module.
-                define(["../widgets/datepicker"], factory);
-            } else {
+    <form>
+      <div>
+        <label for="bgcolor">Choose background color:</label>
+	    <input class="color" id="bgcolor" value="FF0000">
+      </div>
+      <div>
+        <label for="font">Choose font style:</label>
+        <select id="font">
+        	<option value="'Open Sans Condensed', sans-serif" selected>Sans-serif</option>
+        	<option value="'Bitter', serif">Serif</option>
+        	<option value="'Ubuntu Mono'">Monospace</option>
+        </select>
+      </div>
+      <div>
+        <label for="image">Choose image:</label>
+        <select id="image">
+        	<option value="images/firefoxos.png" selected>Firefox</option>
+        	<option value="images/crocodile.png">Crocodile</option>
+        	<option value="images/tortoise.png">Tortoise</option>
+        </select>
+      </div>
+    </form>
 
-                // Browser globals
-                factory(jQuery.datepicker);
-            }
-        }(function(datepicker) {
-
-            datepicker.regional.ru = {
-                closeText: "Закрыть",
-                prevText: "&#x3C;Пред",
-                nextText: "След&#x3E;",
-                currentText: "Сегодня",
-                monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-                ],
-                monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн",
-                    "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"
-                ],
-                dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
-                dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-                dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-                weekHeader: "Нед",
-                dateFormat: "dd.mm.yy",
-                firstDay: 1,
-                isRTL: false,
-                showMonthAfterYear: false,
-                yearSuffix: ""
-            };
-            datepicker.setDefaults(datepicker.regional.ru);
-
-            return datepicker.regional.ru;
-
-        }));
-    </script>
-</head>
-
-<body>
-    <label for="from">с</label>
-    <input type="text" id="from" name="from">
-    <label for="to">по</label>
-    <input type="text" id="to" name="to">
-</body>
-
+    <footer></footer>
+    <img src="images/firefoxos.png">
+  </div>
+  </body>
+  <script src="jscolor/jscolor.js"></script>
+  <script src="simple.js"></script>
 </html>

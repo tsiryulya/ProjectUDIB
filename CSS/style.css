@@ -708,36 +708,46 @@ header {
 
 .cross {
     /* flex: 24%; */
-    max-width: 24%;
-    min-width: 24%;
+    max-width: 23.5%;
+    min-width: 23.5%;
     margin: 5px;
     background: #1979be;
     color: aliceblue;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
 
+}
+
+.cross:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 @media only screen and (max-width: 1312px) {
     .cross {
-        max-width: 32%;
+        max-width: 31.5%;
     }
 
 }
 
 @media only screen and (max-width: 1003px) {
     .cross {
-        max-width: 48%;
+        max-width: 47.5%;
     }
 
 }
 
 @media only screen and (max-width: 694px) {
     .cross {
-        max-width: 99%;
+        max-width: 95%;
     }
 }
 
 .new {
     margin-top: 1%;
+    width: 100%;
 }
 
 .nameGroup {
@@ -766,15 +776,20 @@ header {
 }
 
 .cont {
-    font-size: 1.1vw;
+    font-size: 1vw;
     font-family: 'Open Sans', sans-serif;
     margin: 3%;
+    line-height: 1;
+    display: flex;
 }
 
 .value {
-    font-size: 1.1vw;
+    width: 80%;
+    font-size: 1vw;
     font-family: 'Open Sans', sans-serif;
     text-align: right;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 /*Scroll*/
@@ -922,11 +937,24 @@ header {
 .contentModal > .cross {
     margin-left: 10%;
     margin-top: 0;
+    max-width: 35%;
+}
+
+.contentModal > .cross:hover {
+    -webkit-transform: none;
 }
 
 .contentModal > .cross > .cont {
     margin-top: 1%;
     line-height: 2;
+}
+
+.newcross > .cross {
+    max-width: 24%;
+}
+
+.newcross {
+    max-width: 100%;
 }
 
 /* The Close Button */
@@ -983,7 +1011,7 @@ header {
     display: flex;
     margin: 5% 7% 7%;
     width: auto;
-    height: 53.9%;
+    height: 63.9%;
     padding: 1%;
 }
 
@@ -1054,7 +1082,7 @@ header {
 .closeType:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .listType {
@@ -1120,7 +1148,7 @@ header {
 .closePeriod:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .listPeriod {
@@ -1135,12 +1163,13 @@ header {
     border: 1px solid #176691;
     background: #176691;
     color: #eeeeee;
-    font-weight:normal;
+    font-weight: normal;
 }
 
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
     border: 1px solid #176691;
     background: #176691;
     color: #eeeeee;
 }
-

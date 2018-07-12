@@ -5,6 +5,7 @@ $('#btn-entry').click(function () {
 
 /*Main.html переход на Statistics.html*/
 $('#btn-statistics').click(function () {
+    localStorage.setItem("groupsCrossroads", null);
     location.replace("Statistics.html");
 });
 
@@ -19,9 +20,27 @@ var btn = document.getElementById("btn-history");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+
+var listHistory = document.getElementsByClassName("listHistory");
+
+for (var i = 0; i < listHistory.length; i++) {
+    listHistory[i].onclick = function () {
+        var droups = localStorage.getItem("groupsCrossroads");
+        location.replace("Statistics.html");
+    };
+}
+
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
     modal.style.display = 'block';
+    var date = localStorage.getItem("dateCreate");
+    $(".listHistory").append('<p>- ' + date + '</p>');
+   /* if (localStorage.dateCreate) {
+        localStorage.dateCreate += '<p>New Appended item</p>';
+    } else {
+        localStorage.dateCreate = '<p>Appended item</p>';
+    } */
+
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -37,5 +56,3 @@ window.onclick = function (event) {
 }
 
 //listCross//
-
-
