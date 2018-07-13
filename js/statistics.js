@@ -55,6 +55,9 @@ btnDelete.onclick = function () {
             i--;
         }
     }
+if (document.getElementsByClassName("nameGroup")) {
+    
+}
 };
 
 var btnCopy = document.getElementById("btnCopy");
