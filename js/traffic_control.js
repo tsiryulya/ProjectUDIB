@@ -21,7 +21,7 @@ YMaps.jQuery(function () {
 
     var s = new YMaps.Style;
     s.iconStyle = new YMaps.IconStyle;
-    s.iconStyle.href = "/images/icon_cam.png";
+    s.iconStyle.href = "../images/icon_cam.png";
     s.iconStyle.size = new YMaps.Point(27, 26);
     s.iconStyle.offset = new YMaps.Point(-10, -24);
     var cams = [ {

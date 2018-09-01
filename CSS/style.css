@@ -37,7 +37,7 @@ body {
 
 @media only screen and (max-width: 767px) {
     .wrapper {
-        background-image: url(/images/mainFonSm.jpg);
+        background-image: url(../images/mainFonSm.jpg);
     }
 }
 
@@ -142,7 +142,7 @@ header {
 
 .form button {
     font-family: 'Source Sans Pro', sans-serif;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     /*цвет границы объекта прозрачный*/
     width: 100%;
@@ -159,7 +159,7 @@ header {
 .form button:hover,
 .form button:active,
 .form button:focus {
-    background: url(/images/btn.png);
+    background: url(../images/btn.png);
 }
 
 /*footer*/
@@ -231,7 +231,7 @@ header {
 
 @media only screen and (max-width: 767px) {
     .wrapperMain {
-        background-image: url(/images/mainFonSm.jpg);
+        background-image: url(../images/mainFonSm.jpg);
     }
 }
 
@@ -420,7 +420,7 @@ header {
 
 .btn-statistics {
     font-family: 'Source Sans Pro', sans-serif;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     width: 35%;
     padding: 2%;
@@ -438,7 +438,7 @@ header {
 
 .btn-history {
     font-family: 'Source Sans Pro', sans-serif;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     width: 35%;
     padding: 2%;
@@ -551,7 +551,7 @@ header {
 
 @media only screen and (max-width: 767px) {
     .wrapperStatistics {
-        background-image: url(/images/mainFonSm.jpg);
+        background-image: url(../images/mainFonSm.jpg);
     }
 }
 
@@ -567,7 +567,7 @@ header {
     margin: 7%;
     width: 38%;
     padding: 2%;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
     -webkit-transition: all 0.3 ease;
@@ -580,14 +580,14 @@ header {
 .btn-newGroup:hover,
 .btn-newGroup:active,
 .btn-newGroup:focus {
-    background: url(/images/btn.png);
+    background: url(../images/btn.png);
 }
 
 .btn-settings {
     margin: 7%;
     padding: 2%;
     width: 38%;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
     -webkit-transition: all 0.3 ease;
@@ -600,14 +600,14 @@ header {
 .btn-settings:hover,
 .btn-settings:active,
 .btn-settings:focus {
-    background: url(/images/btn.png);
+    background: url(../images/btn.png);
 }
 
 .btn-delete {
     margin: 0 0 0 30%;
     width: 38%;
     padding: 2%;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
     -webkit-transition: all 0.3 ease;
@@ -620,14 +620,14 @@ header {
 .btn-delete:hover,
 .btn-delete:active,
 .btn-delete:focus {
-    background: url(/images/btn.png);
+    background: url(../images/btn.png);
 }
 
 .btn-set {
     margin: 7%;
     padding: 2%;
     width: 38%;
-    background: url(/images/btnInactive.png);
+    background: url(../images/btnInactive.png);
     border-color: transparent;
     color: #FFFFFF;
     -webkit-transition: all 0.3 ease;
@@ -640,14 +640,14 @@ header {
 .btn-set:hover,
 .btn-set:active,
 .btn-set:focus {
-    background: url(/images/btn.png);
+    background: url(../images/btn.png);
 }
 
 .btn-ok {
     margin: 5%;
     padding: 2%;
     width: 38%;
-    background: url(/images/btnInactive_ok.png);
+    background: url(../images/btnInactive_ok.png);
     border-color: transparent;
     color: #FFFFFF;
     -webkit-transition: all 0.3 ease;
@@ -660,7 +660,7 @@ header {
 .btn-ok:hover,
 .btn-ok:active,
 .btn-ok:focus {
-    background: url(/images/btn_ok.png);
+    background: url(../images/btn_ok.png);
 }
 
 
@@ -713,17 +713,9 @@ header {
     margin: 5px;
     background: #1979be;
     color: aliceblue;
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
 
 }
 
-.cross:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-}
 
 @media only screen and (max-width: 1312px) {
     .cross {
@@ -949,13 +941,15 @@ header {
     line-height: 2;
 }
 
-.newcross > .cross {
+.newCross > .cross {
     max-width: 24%;
 }
 
-.newcross {
+.newCross {
     max-width: 100%;
 }
+
+
 
 /* The Close Button */
 

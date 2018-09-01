@@ -9,6 +9,17 @@ $('#btn-statistics').click(function () {
     location.replace("Statistics.html");
 });
 
+/*constructor cross*/
+function CrossClass(imageCross, contCross) {
+    this.imageCross = imageCross;
+    this.contCross = contCross;
+};
+
+function DateCross(dateCross) {
+    this.dateCross = dateCross;
+};
+
+
 //modal//
 
 // Get the modal
@@ -33,13 +44,18 @@ for (var i = 0; i < listHistory.length; i++) {
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
     modal.style.display = 'block';
-    var date = localStorage.getItem("dateCreate");
+    var str = localStorage.getItem("groupsCrossroads");
+    var event = JSON.parse(str, function (key, value) {
+        if (key == 'dateCross') return new DateCross(value);
+        return value;
+    });
+
     $(".listHistory").append('<p>- ' + date + '</p>');
-   /* if (localStorage.dateCreate) {
-        localStorage.dateCreate += '<p>New Appended item</p>';
-    } else {
-        localStorage.dateCreate = '<p>Appended item</p>';
-    } */
+    /* if (localStorage.dateCreate) {
+         localStorage.dateCreate += '<p>New Appended item</p>';
+     } else {
+         localStorage.dateCreate = '<p>Appended item</p>';
+     } */
 
 }
 

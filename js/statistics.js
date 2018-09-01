@@ -2,35 +2,14 @@
 $('#btn-newGroup').click(function () {
     location.replace("Main.html");
 });
- 
+
 var settings = document.getElementById('settings');
 var btn = document.getElementById("btnSettings");
 var btnOk = document.getElementById("btnOk");
 var highlightCoross = document.getElementsByClassName("cross");
-
-if (localStorage.getItem("groupsCrossroads") != "null") {
- $(".cross").remove();
-   var divGroups = document.getElementById("groupsCrossroads");
-    var divGroupsNew = JSON.parse(localStorage.getItem("groupsCrossroads"));
-    $(".groupsCrossroads").append(divGroupsNew);
-//   divGroups.push(divGroupsNew);
-   localStorage.setItem("groupsCrossroads", null);
-} 
-
-
 var modal = document.getElementById('modalStatistics');
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-for (var i = 0; i < highlightCoross.length; i++) {
-    highlightCoross[i].onclick = function () {
-        var dCross = this.cloneNode(true);
-        //появляется модальное окно
-        modal.style.display = "block";
-        $(".contentModal").append(dCross);
-        dCross.id = "modalCross";
-    };
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -47,6 +26,48 @@ window.onclick = function (event) {
     }
 }*/
 
+for (var i = 0; i < highlightCoross.length; i++) {
+    highlightCoross[i].onclick = function () {
+        var dCross = this.cloneNode(true);
+        //появляется модальное окно
+        modal.style.display = "block";
+        $(".contentModal").append(dCross);
+        dCross.id = "modalCross";
+    };
+}
+
+/*constructor cross*/
+function CrossClass(imageCross, contCross) {
+    this.imageCross = imageCross;
+    this.contCross = contCross;
+
+    /*  this.run = function (speed) {
+          this.speed += speed;
+          alert(this.name + ' бежит, скорость ' + this.speed);
+      };
+
+      this.stop = function () {
+          this.speed = 0;
+          alert(this.name + ' стоит');
+      };*/
+};
+
+function DateCross(dateCross) {
+  this.dateCross = dateCross;  
+};
+
+DateCross.prototype = new CrossClass();
+/*update cross*/
+/*
+if (localStorage.getItem("groupsCrossroads") != "null") {
+    $(".cross").remove();
+    var divGroups = document.getElementById("groupsCrossroads");
+    var divGroupsNew = JSON.parse(localStorage.getItem("groupsCrossroads"));
+    $(".groupsCrossroads").append(divGroupsNew);
+    //   divGroups.push(divGroupsNew);
+    localStorage.setItem("groupsCrossroads", null);
+} */
+
 var btnDelete = document.getElementById("btnDelete");
 btnDelete.onclick = function () {
     for (var i = 0; i < highlightCoross.length; i++) {
@@ -55,9 +76,9 @@ btnDelete.onclick = function () {
             i--;
         }
     }
-if (document.getElementsByClassName("nameGroup")) {
-    
-}
+    if (document.getElementsByClassName("nameGroup")) {
+
+    }
 };
 
 var btnCopy = document.getElementById("btnCopy");
@@ -168,10 +189,20 @@ btnOk.onclick = function () {
         minute: 'numeric',
         second: 'numeric'
     };
-    var dateCreate = date.toLocaleString("ru", options);
-    var groups = document.getElementById("groupsCrossroads").outerHTML;
-    localStorage.setItem("dateCreate", dateCreate.toString());
-    localStorage.setItem("groupsCrossroads", JSON.stringify(groups));
+    var dateCreate = new DateCross(date.toLocaleString("ru", options));
+  //  var crossList = new Set(); 
+    var str;
+    str = JSON.stringify(dateCreate);
+  //  crossList.add(dateCreate);
+    for (var i = 0; i < highlightCoross.length; i++) {
+        var cross = new CrossClass(highlightCoross[i].children[0].firstChild.currentSrc, highlightCoross[i].children[1].firstChild.data);
+        str += JSON.stringify(cross);
+        //crossList.add(cross);
+    }    
+    //var groups = document.getElementById("groupsCrossroads").outerHTML;
+    //localStorage.setItem("dateCreate", dateCreate.toString());
+    
+    localStorage.setItem("groupsCrossroads", str);
     /*//убрать выделения 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].style.border = "";
@@ -351,7 +382,7 @@ function drawCurveTypes() {
         },
 
         'width': 400,
-        'height': 241
+        'height': 239
 
     };
 
@@ -401,3 +432,4 @@ chartPeriod.onclick = function () {
 spanPeriod.onclick = function () {
     modalPeriod.style.display = 'none';
 }
+
