@@ -35,8 +35,14 @@ var span = document.getElementsByClassName("close")[0];
 var listHistory = document.getElementsByClassName("listHistory");
 
 for (var i = 0; i < listHistory.length; i++) {
-    listHistory[i].onclick = function () {
-        var droups = localStorage.getItem("groupsCrossroads");
+    listHistory[i].onclick = function (Event) {
+        var selectedDate = Event.srcElement.innerHTML.substring(2);
+        var objHistor = JSON.parse(localStorage.getItem("groupsCrossroads"));
+        for (var i = 0; i < objHistor.length; i++) {
+            if (selectedDate === objHistor[i][0].dateCross) {
+                localStorage.setItem("selectedGroup", JSON.stringify(objHistor[i]));
+            }
+        }
         location.replace("Statistics.html");
     };
 }
@@ -44,13 +50,18 @@ for (var i = 0; i < listHistory.length; i++) {
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
     modal.style.display = 'block';
-    var str = localStorage.getItem("groupsCrossroads");
-    var event = JSON.parse(str, function (key, value) {
-        if (key == 'dateCross') return new DateCross(value);
-        return value;
-    });
 
-    $(".listHistory").append('<p>- ' + date + '</p>');
+    var obj = JSON.parse(localStorage.getItem("groupsCrossroads"));
+    //for (var i = 0; i < localStorage.length; i++) {
+    //  var key = localStorage.key(i);
+    //var item = JSON.parse(localStorage.getItem(key));
+    //    }
+
+    for (var i = 0; i < obj.length; i++) {
+        $(".listHistory").append('<p>- ' + obj[i][0].dateCross + '</p>');
+    }
+
+
     /* if (localStorage.dateCreate) {
          localStorage.dateCreate += '<p>New Appended item</p>';
      } else {

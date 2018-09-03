@@ -3,6 +3,16 @@ $('#btn-newGroup').click(function () {
     location.replace("Main.html");
 });
 
+if (localStorage.getItem('selectedGroup') !== null) {
+    $("#groupsCrossroads").empty();
+    var newGroup = JSON.parse(localStorage.getItem("selectedGroup"));
+    for (var i = 1; i < newGroup.length; i++) {
+        var m = newGroup[i].imageCross;
+        $('#groupsCrossroads').append('<div class="cross"><div class="image"><img src="' + newGroup[i].imageCross + '" style="width:100%"></div> <div class="cont"> ' + newGroup[i].contCross + ' <div class="value"> 21 <img src="../images/icon_current.png" alt=""> 21 <img src="../images/icon_trend.png" alt=""></div> </div> </div>');
+    }
+    localStorage.removeItem('selectedGroup');
+}
+
 var settings = document.getElementById('settings');
 var btn = document.getElementById("btnSettings");
 var btnOk = document.getElementById("btnOk");
@@ -15,6 +25,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
     modal.style.display = "none";
     $("#modalCross").remove();
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -40,33 +51,14 @@ for (var i = 0; i < highlightCoross.length; i++) {
 function CrossClass(imageCross, contCross) {
     this.imageCross = imageCross;
     this.contCross = contCross;
-
-    /*  this.run = function (speed) {
-          this.speed += speed;
-          alert(this.name + ' бежит, скорость ' + this.speed);
-      };
-
-      this.stop = function () {
-          this.speed = 0;
-          alert(this.name + ' стоит');
-      };*/
 };
 
 function DateCross(dateCross) {
-  this.dateCross = dateCross;  
+    this.dateCross = dateCross;
 };
 
 DateCross.prototype = new CrossClass();
-/*update cross*/
-/*
-if (localStorage.getItem("groupsCrossroads") != "null") {
-    $(".cross").remove();
-    var divGroups = document.getElementById("groupsCrossroads");
-    var divGroupsNew = JSON.parse(localStorage.getItem("groupsCrossroads"));
-    $(".groupsCrossroads").append(divGroupsNew);
-    //   divGroups.push(divGroupsNew);
-    localStorage.setItem("groupsCrossroads", null);
-} */
+
 
 var btnDelete = document.getElementById("btnDelete");
 btnDelete.onclick = function () {
@@ -190,19 +182,25 @@ btnOk.onclick = function () {
         second: 'numeric'
     };
     var dateCreate = new DateCross(date.toLocaleString("ru", options));
-  //  var crossList = new Set(); 
-    var str;
-    str = JSON.stringify(dateCreate);
-  //  crossList.add(dateCreate);
+    var str = [];
+    var newStr = [];
+    newStr.push(dateCreate);
     for (var i = 0; i < highlightCoross.length; i++) {
-        var cross = new CrossClass(highlightCoross[i].children[0].firstChild.currentSrc, highlightCoross[i].children[1].firstChild.data);
-        str += JSON.stringify(cross);
-        //crossList.add(cross);
-    }    
-    //var groups = document.getElementById("groupsCrossroads").outerHTML;
-    //localStorage.setItem("dateCreate", dateCreate.toString());
-    
-    localStorage.setItem("groupsCrossroads", str);
+        var cross = new CrossClass(highlightCoross[i].children[0].firstChild.currentSrc.substring(22), highlightCoross[i].children[1].firstChild.data);
+        newStr.push(cross);
+    }
+    str.push(newStr);
+    var strHistory = [];
+    if (JSON.parse(localStorage.getItem("groupsCrossroads")) !== null) {
+        strHistory.push(JSON.parse(localStorage.getItem("groupsCrossroads")));
+        for (var i = 0; i < strHistory[0].length; i++) {
+            str.push(strHistory[0][i]);
+        }
+        if (strHistory[0].length > 10) {
+            str.splice(-1, 1);
+        }
+    }
+    localStorage.setItem("groupsCrossroads", JSON.stringify(str));
     /*//убрать выделения 
     for (var i = 0; i < highlightCoross.length; i++) {
         highlightCoross[i].style.border = "";
@@ -432,4 +430,3 @@ chartPeriod.onclick = function () {
 spanPeriod.onclick = function () {
     modalPeriod.style.display = 'none';
 }
-

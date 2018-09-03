@@ -702,6 +702,7 @@ header {
 
 .cross img {
     vertical-align: middle;
+    width: 17%;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -709,6 +710,7 @@ header {
 .cross {
     /* flex: 24%; */
     max-width: 23.5%;
+    max-height: 27%;
     min-width: 23.5%;
     margin: 5px;
     background: #1979be;
@@ -720,6 +722,11 @@ header {
 @media only screen and (max-width: 1312px) {
     .cross {
         max-width: 31.5%;
+        max-height: 28%;
+    }
+    .cross img {
+        vertical-align: middle;
+        width: 14%;
     }
 
 }
@@ -727,6 +734,11 @@ header {
 @media only screen and (max-width: 1003px) {
     .cross {
         max-width: 47.5%;
+        max-height: 30%;
+    }
+    .cross img {
+        vertical-align: middle;
+        width: 10%;
     }
 
 }
@@ -734,6 +746,11 @@ header {
 @media only screen and (max-width: 694px) {
     .cross {
         max-width: 95%;
+        max-height: 30%;
+    }
+    .cross img {
+        vertical-align: middle;
+        width: 7%;
     }
 }
 
@@ -930,6 +947,9 @@ header {
     margin-left: 10%;
     margin-top: 0;
     max-width: 35%;
+    max-height: 100%;
+    background: #1979be;
+    color: aliceblue;
 }
 
 .contentModal > .cross:hover {
